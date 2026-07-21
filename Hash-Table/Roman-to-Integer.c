@@ -1,4 +1,3 @@
-// Helper function to return the integer value of a Roman character
 int getRomanValue(char c) {
     switch (c) {
         case 'I': return 1;
@@ -16,7 +15,6 @@ int romanToInt(char* s) {
     int total = 0;
     int length = strlen(s);
 
-    // Loop through the string up to the second-to-last character
     for (int i = 0; i < length - 1; i++) {
         // Compare current character value with the next character value
         if (getRomanValue(s[i]) < getRomanValue(s[i + 1])) {
@@ -26,7 +24,6 @@ int romanToInt(char* s) {
         }
     }
 
-    // Always add the value of the very last character
     total += getRomanValue(s[length - 1]);
 
     return total;
